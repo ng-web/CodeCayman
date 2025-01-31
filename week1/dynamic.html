@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Page (With JavaScript)</title>
+    <style>
+        body { /* Adding styles to the body of html page*/
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            transition: background-color 0.5s ease; /* Smooth color transition */
+        }
+        button { /* Styling the buttons */
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 10px;
+            border: none;
+            cursor: pointer;
+        }
+        #changeTextBtn {
+            background-color: blue;
+            color: white;
+        }
+        #changeColorBtn {
+            background-color: green;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to My Website</h1>
+    <p id="message">This page is interactive. Click the buttons to see the magic!</p>
+    <button id="changeTextBtn" onclick="changeText()">Change Text</button>
+    <button id="changeColorBtn" onclick="changeBackgroundColor()">Change Background Color</button>
+
+    <script>
+        // funtion to change button text
+        function changeText() {
+            document.getElementById("message").innerText = "You clicked the button! JavaScript made this happen.";
+        }
+
+        // function to change background colour of the page
+        function changeBackgroundColor() {
+            const colors = ["#FF5733", "#33FF57", "#3357FF", "#F1C40F", "#8E44AD", "#E74C3C", "#2ECC71"];
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            document.body.style.backgroundColor = randomColor;
+        }
+    </script>
+</body>
+</html>
