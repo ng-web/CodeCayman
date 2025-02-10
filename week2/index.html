@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Do You Want to Play a Game?</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
+
+        body {
+            background: url('img/saw.jpg');
+            background-size: cover;
+            color: white;
+            font-family: 'Creepster', cursive;
+            text-align: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h1 {
+            font-size: 3rem;
+            text-shadow: 3px 3px 5px red;
+        }
+
+        .game-container {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px red;
+        }
+
+        button {
+            font-size: 1.5rem;
+            padding: 15px 30px;
+            margin-top: 20px;
+            border: none;
+            cursor: pointer;
+            color: white;
+            background: red;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: darkred;
+            box-shadow: 0px 0px 10px white;
+        }
+
+        @keyframes flicker {
+            0% {opacity: 1;}
+            50% {opacity: 0.4;}
+            100% {opacity: 1;}
+        }
+
+        .flicker {
+            animation: flicker 1s infinite alternate;
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <h1 class="flicker">Do You Want to Play a Game?</h1>
+        <button onclick="startGame()">BEGIN</button>
+        <audio id="sawAudioBegin" src="media/game.mp3"></audio>
+        <audio id="sawAudioCancel" src="media/gameover2.mp3"></audio>
+        <audio id="sawAudioWin" src="media/win.mp3"></audio>
+    </div>
+
+    <script>
+        function startGame() {
+            document.getElementById('sawAudioBegin').play(); // Fix: Corrected ID
+            setTimeout(playGame, 3000); // Wait for audio before starting game
+        }
+
+        function playGame() {
+            let min = 1, max = 100, answer = random(100), guess, message = "Guess the Number";
+
+            do {
+                guess = prompt(`${message}\nFrom ${min} to ${max}`);
+                if (guess === null) {
+                    document.getElementById('sawAudioCancel').play(); // Fix: Play audio before returning
+                    return alert("Game Cancelled!");
+                }
+                guess = parseInt(guess) || 0;
+
+                if (guess < answer) {
+                    message = "Too Low!";
+                    min = guess + 1;
+                } else if (guess > answer) {
+                    message = "Too High!";
+                    max = guess - 1;
+                } else {
+                    setTimeout(document.getElementById('sawAudioWin').play(), 5000);
+                    alert("Correct! You win.")
+                }
+            } while (guess !== answer);
+        }
+
+        function random(max) {
+            return Math.floor(Math.random() * max) + 1;
+        }
+    </script>
+</body>
+</html>
