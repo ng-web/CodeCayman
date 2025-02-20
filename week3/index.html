@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +8,28 @@
     <title>HTML EVENTS</title>
 </head>
 <body>
+    <h1>Accessing Elements in the DOM</h1>
+
+    <h2>Div with ID (#demo)</h2>
+    <div id="demo">Access me by ID</div>
+
+    <h2>Divs with Class (.demo)</h2>
+    <div class="demo">Access me by class (1)</div>
+    <div class="demo">Access me by class (2)</div>
+
+    <h2>Tag (article)</h2>
+    <div>
+        <article>Access me by tag (1)</article>
+        <article>Access me by tag (2)</article>
+    </div>  
+
+    <h2>Query Selector</h2>
+    <div id="demo-query">Access me by query</div>
+
+    <h2>Query Selector All</h2>
+    <div class="demo-query-all">Access me by query all (1)</div>
+    <div class="demo-query-all">Access me by query all (2)</div>
+
     <h1>HTML DOM Manipulation</h1>
     
     <div>
@@ -32,13 +55,13 @@
 
     <div>
         <h2>Mouse Hover Event</h2>
-        <div id="hoverBox" class="box">Hover over me!</div>
+        <div id="hoverBox">Hover over me!</div>
     </div>
 
     <div>
         <h2>Keyboard Event</h2>
         <input type="text" id="keyInput" placeholder="Type something...">
-        <p class="keyboard-box" id="keyDisplay">Press a key...</p>
+        <p id="keyDisplay">Press a key...</p>
     </div>
 
     <div>
@@ -48,10 +71,13 @@
             <li>Item 2</li>
             <li>Item 3</li>
             <li>Item 4</li>
-            <li>Item 5</li>
         </ul>
-        <button id="animateList">Animate List</button>
+        <button id="animateList">Show List</button>
     </div>
+
+    <div>
+        <canvas id="graphics" width="300" height="300" style="border:1px solid grey"></canvas>
+    </div>      
     
     <script src="scripts.js"></script>
 </body>
