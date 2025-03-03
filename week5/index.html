@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meal App</title>
+  <style>
+    
+  </style>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Meal App</h1>
+  </header>
+  <div class="container">
+    <div class="search-filter">
+      <input type="text" id="searchInput" placeholder="Search for a meal..." />
+      <!-- Only one default option: "All" -->
+      <select id="categorySelect">
+        <option value="All">All</option>
+      </select>
+    </div>
+    <div id="mealGrid" class="meal-grid"></div>
+  </div>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
