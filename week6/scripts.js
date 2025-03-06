@@ -89,7 +89,7 @@ function fetchMealsByCategory(category) {
     .catch(error => console.error('Error fetching meals by category:', error));
 }
 
-// Fetch meals by search query
+// Fetch meals by search query 
 function fetchMealsBySearch(query) {
   fetch(searchURL + query)
     .then(response => response.json())
