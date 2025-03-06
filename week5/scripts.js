@@ -42,8 +42,3 @@ function loadMeals() {
       })
       .catch(error => console.error('Error fetching meals:', error));
 }
-
-if (categorySelect.value === 'All') {
-    loadMeals();
-  }
-
