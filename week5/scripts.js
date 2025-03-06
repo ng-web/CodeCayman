@@ -1,4 +1,4 @@
-// API Endpoints from TheMealDB
+// API Endpoints from TheMealDB - check using postman
 const searchURL = 'https://www.themealdb.com/api/json/v1/1/search.php?s=';
 const categoryListURL = 'https://www.themealdb.com/api/json/v1/1/categories.php';
 const filterByCategoryURL = 'https://www.themealdb.com/api/json/v1/1/filter.php?c=';
